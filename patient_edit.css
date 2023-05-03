@@ -1,0 +1,95 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0d7a1;
+    text-align: center;
+}
+.d{
+    height: 110px;
+    width: 110px;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+.pic1{
+    height: 100px;
+    width: 100px;
+    border-radius: 100vw;
+}
+.c{
+    position: absolute;
+    left: 120px;
+    top: 50px;
+}
+.doctor{
+    margin-right: 10px;
+    position: absolute;
+    top: 90px;
+    right: 310px;
+    cursor: pointer;
+}
+.questionnaire{
+    margin-right: 10px;
+    position: absolute;
+    top: 90px;
+    right: 180px;
+    cursor: pointer;
+}
+.issue{
+    margin-right: 10px;
+    position: absolute;
+    top: 90px;
+    right: 80px;
+    cursor: pointer;
+}
+.logout{
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    cursor: pointer;
+}
+.a{
+    border-bottom: 1px outset #000;
+    background-color: #8b4b00;
+    color: #FAFAFA;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.b{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    border: 1px solid #351c00;
+    position: absolute;
+    left: 50vw;
+    top: 200px;
+    z-index: 2;
+    transform: translateX(-50%);
+    background-color: #fafafab9;
+    width: 500px;
+    height: 600px;
+    text-align: start;
+    font-size: 24px;
+    padding: 10px;
+}
+.back{
+    position: absolute;
+    background-color: #8b4b00;
+    text-align: center;
+    cursor: pointer;
+    font-size: 36px;
+    height: 40px;
+    width:100px;
+    padding: 5px;
+    top:130px;
+    border: 1px solid #351c00;
+    color: #FAFAFA;
+    border-radius: 5px;
+    margin: 10px;
+}
+.f{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,53 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pic1{
+    padding: 10px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 100vh;
+}
+.navbar{
+    width: 100vw;
+    height: 100px;
+    background-color: #a8a8a8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 30px #a8a8a870;
+}
+#person{
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 30px #6d6d6d70;
+}
+#userbn{
+    padding: 5px 10px;
+}
+#user{
+    font-size: 24px;
+}
+.container{
+    margin-top: 50px;
+}
+hr{
+    border-width: 3px;
+}
+.inputfield{
+    outline: 0;
+    width: 350px;
+    font-size: 16px;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid brown;
+}
+th{
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+}

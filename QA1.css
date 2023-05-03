@@ -1,0 +1,51 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pic1{
+    padding: 10px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 100vh;
+}
+.navbar{
+    width: 100vw;
+    height: 100px;
+    background-color: #a8a8a8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 30px #a8a8a870;
+}
+#person{
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 30px #6d6d6d70;
+}
+#userbn{
+    padding: 5px 10px;
+}
+#user{
+    font-size: 24px;
+}
+#solve{
+    position: absolute;
+    top:300px;
+    right: 10vw;
+    width: 400px;
+}
+#new{
+    position: absolute;
+    top:200px;
+    left: 50vw;
+    width: 650px;
+    transform: translateX(-50%);
+}
+.answer{
+    background-color: aliceblue;
+    width: 500px;
+}

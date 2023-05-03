@@ -1,0 +1,112 @@
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 0.8;
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown2 {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -20%, 0);
+    }
+  
+    to {
+      opacity: 0.8;
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight{
+    from {
+      opacity: 0;
+      transform: translate3d(20%, 0, 0);
+    }
+  
+    to {
+      opacity: 0.8;
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-fill-mode: both;
+    animation-duration: 1.3s;
+}
+.fadeInDown2 {
+    animation-name: fadeInDown2;
+    animation-fill-mode: both;
+    animation-duration: 1.3s;
+    animation-delay: 0.7s;
+}
+.fadeInDown3 {
+    animation-name: fadeInDown2;
+    animation-fill-mode: both;
+    animation-duration: 1.3s;
+    animation-delay: 1s;
+}
+.fadeInDown4 {
+    animation-name: fadeInDown2;
+    animation-fill-mode: both;
+    animation-duration: 1.3s;
+    animation-delay: 1.2s;
+}
+.fadeInDown5 {
+    animation-name: fadeInDown2;
+    animation-fill-mode: both;
+    animation-duration: 1.4s;
+}
+.fadeInRight {
+    animation-name: fadeInRight;
+    animation-fill-mode: both;
+    animation-duration: 1.3s;
+    animation-delay: 1.4s;
+}
+
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+    height: 100px;
+    opacity: 0.8;
+}
+thead{
+    border-bottom: 1px solid black;
+}
+.editinput{
+    outline: none;
+    border: none;
+    text-align: start;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.315);
+    padding: 5px;
+}
+.editcontainer{
+    width: 600px;
+}
+#calendar{
+    border-radius: 0px 0px 5px 5px;
+}
+.nav .nav-item{
+    border: 2px solid rgba(0, 0, 0, 0.178);
+    border-bottom: 0px;
+    border-radius: 5px;
+}
+.nav .nav-item::after{
+    border: 2px solid rgba(0, 0, 0, 0.178);
+}
+.nav .nav-item1{
+    border-right: 0px;
+}
+.record{
+    border:2px solid rgba(0, 0, 0, 0.178);
+}
+
+  

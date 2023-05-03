@@ -1,0 +1,74 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pic1{
+    padding: 10px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 100vh;
+}
+.navbar{
+    width: 100vw;
+    height: 100px;
+    background-color: #a8a8a8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 30px #a8a8a870;
+}
+.container{
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.link{
+    padding: 10px 5px;
+    text-decoration: none;
+}
+.project{
+    outline: 0;
+    width: 350px;
+    font-size: 16px;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid brown;
+}
+.project:focus{
+    background-color: rgba(255, 255, 255, 0.452);
+}
+.project:active{
+    border: none;
+}
+th{
+    font-weight: normal;
+    text-align: end;
+    text-decoration: none;
+}
+.content{
+    text-align: start;
+}
+.hint{
+    position: absolute;
+    text-align: start;
+    color: #a8a8a8;
+}
+.button{
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 16px;
+    width: 266px;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: brown;
+    cursor: pointer;
+}
+#eye{
+    position: absolute;
+    left: 5px;
+}

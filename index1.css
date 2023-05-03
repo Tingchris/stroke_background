@@ -1,0 +1,150 @@
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 0.8;
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown2 {
+    from {
+      opacity: 0;
+      transform: translate3d(-50%, -75%, 0);
+    }
+  
+    to {
+      opacity: 0.8;
+      transform: translate3d(-50%, -50%, 0);
+    }
+}
+  
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 1.3s;
+    animation-fill-mode: both;
+}
+.fadeInDown2 {
+    animation-name: fadeInDown2;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.navbar{
+    height: 100px;
+    opacity: 0.8;
+}
+.wrapper{
+    position:absolute;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.336);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 110, 255, 0.349);
+    z-index: 3;
+}
+
+.wrapper .form_box{
+    width: 100%;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+.form_box h2{
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input_box{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+    padding: 10px 0px;
+}
+ .input_box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .3s;
+ }
+
+ .input_box input:focus ~ label,
+ .input_box input:valid ~ label{
+    top: -5px;
+ }
+ .input_box input{
+    width: 85%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    padding:0px 35px 0px 5px;
+ }
+
+ .input_box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+ }
+
+ .remember_forget{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0px 15px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember_forget label input{
+    accent-color: #162938;
+    margin-right: 5px;
+}
+.remember_forget a{
+    color: #162938;
+    text-decoration: none;
+}
+.remember_forget a:hover{
+    text-decoration: underline;
+}
+
+#button{
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    opacity: 0.8;
+}
