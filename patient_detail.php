@@ -246,7 +246,7 @@
                         <div class="card-header d-flex align-items-center ">
                             <label class=" fs-2">病人資料</label>
                             <div class="btn_pos">
-                                <form action="export.php" method="post">
+                                <form action="excel.php" method="post">
                                     <input type="hidden" name="account" value="<?php echo $row['account']?>">
                                     <button style="margin-right: 10px;" class="btn  btn-success ">
                                         <span class="text-white fs-5">匯出</span>
