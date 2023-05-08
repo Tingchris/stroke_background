@@ -47,7 +47,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link rel= "stylesheet" href="patient_detail.css">
+        <link rel= "stylesheet" href="patient_detail1.css">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/2826cc1f0b.js" crossorigin="anonymous"></script> 
@@ -77,7 +77,7 @@
             </div>
         </nav>
 
-        <div class="modal fade" id="unlockup" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal fade" id="unlockup" data-bs-backdrop="static" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -99,7 +99,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="lockup" data-bs-backdrop="static" data-bs-keyboard="false"  >
+        <div class="modal fade" id="lockup" data-bs-backdrop="static"   >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -121,7 +121,7 @@
             </div>
         </div>
         
-        <div class="modal fade" id="unlockdown" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal fade" id="unlockdown" data-bs-backdrop="static">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -143,7 +143,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="lockdown" data-bs-backdrop="static" data-bs-keyboard="false"  >
+        <div class="modal fade" id="lockdown" data-bs-backdrop="static" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -240,14 +240,22 @@
 
         <div class="container-fluid p-4" id="wrapper">
             <div class="row ">
-                <div class="col-2"></div>
-                <div class="col-4">
+                <div class="col-1"></div>
+                <div class="col-5">
                     <div class="card fadeInDown2 ">
                         <div class="card-header d-flex align-items-center ">
                             <label class=" fs-2">病人資料</label>
-                            <a style="margin-right: 10px;" type="button" class="btn  btn-info position-absolute end-0 " data-bs-toggle="modal" data-bs-target="#edit">
-                                <span class="text-white fs-5">編輯</span>
-                            </a>
+                            <div class="btn_pos">
+                                <form action="export.php" method="post">
+                                    <input type="hidden" name="account" value="<?php echo $row['account']?>">
+                                    <button style="margin-right: 10px;" class="btn  btn-success ">
+                                        <span class="text-white fs-5">匯出</span>
+                                    </button>
+                                </form>
+                                <a style="margin-right: 10px;" type="button" class="btn  btn-info " data-bs-toggle="modal" data-bs-target="#edit">
+                                    <span class="text-white fs-5">編輯</span>
+                                </a>
+                            </div>
                         </div>
                         <div class="card-body mt-2">
                             <div class="container" >
@@ -307,7 +315,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 ">
+                <div class="col-5 ">
                     <div class="row-12">
                         <div class="card fadeInDown3">
                         <div class="card-header d-flex align-items-center">
@@ -525,7 +533,7 @@
                         </div>
                     </div>
                 </div>-->
-                <div class="col-2"></div>
+                <div class="col-1"></div>
             </div>
         </div>
         <footer></footer>

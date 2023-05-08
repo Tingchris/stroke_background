@@ -16,11 +16,11 @@
     $name = $row["name"];
     $noenough =$name.'的金幣還不夠哦!';
     $exchange = $name.'的禮物兌換成功!';
-    if($coin<500){
+    if($coin<600){
         echo"<script> alert('$noenough');</script>";
         header("refresh:.1;url=web.php");
     }else{
-        $coin=$coin-500;
+        $coin=$coin-600;
         $sql="UPDATE co SET coin=$coin WHERE account='$account'";
         if($conn->query($sql)==FALSE){
             echo "<script> alert('ERROR');</script>";

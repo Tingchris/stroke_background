@@ -81,14 +81,14 @@
                                     </td>
                                     <td class="align-middle" >
                                         <div class="progress"  style="height: 30px;">
-                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: <?php echo $row['coin']*100/500,'%'; ?>;" aria-valuemin="0" aria-valuemax="500" aria-valuenow="<?php echo $row['coin'];?>"></div>
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: <?php echo $row['coin']*100/600,'%'; ?>;" aria-valuemin="0" aria-valuemax="600" aria-valuenow="<?php echo $row['coin'];?>"></div>
                                         </div>
                                         <form action="coinreset.php" method="post">
                                             <input type="hidden" class="account" name="account" value="<?php echo $row['account'];?>">
                                             <input type="hidden" class="coinvalue" name="coin" value="<?php echo $row['coin']?>">
                                             <span class="fs-5 text-secondary "><?php echo  '目前累積:'.$row['coin'].'個'?></span>
                                                 <?php
-                                                    if($row['coin']>=500){
+                                                    if($row['coin']>=600){
                                                 ?>
                                                 <button class="wobble" style="border:none; outline:none; background:transparent" >
                                                     <i class="fs-5 fa-solid fa-gift" style="color: #0080FF" ></i>
