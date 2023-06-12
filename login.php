@@ -1,8 +1,9 @@
 <?php
+    session_start();
     require_once('mysql.php');
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
+
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         if($username==null||$password==null){
             echo"<script type='text/javascript'> alert('您的使用者名稱欄或密碼欄尚未填寫');</script>";
