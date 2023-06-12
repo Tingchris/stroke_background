@@ -5,7 +5,7 @@
     $datas=array();
     $patient = "SELECT * FROM co";
     $result1=mysqli_query($conn,$patient);
-    
+    echo $_GET['value'];
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +26,11 @@
         </head>
     </head>
     <body>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fadeInDown ">
             <div class="container-fluid ">
 
@@ -49,12 +54,16 @@
             <div class="card">
                 <div class="card-header">
                     <label class="fs-3">患者查詢</label>
+                    <a id="export" type="button" style="margin-right: 10px;" class="btn align-middle btn-success position-absolute end-0">
+                        <span class="fs-5">匯出</span> 
+                    </a>
                 </div>
                 <div class="card-body mt-2">
                     <div class="container">
-                        <table id="datatable" class="table table-bordered text-center" >
+                        <table id="datatable" class="table table-bordered text-center " >
                             <thead >
-                                <th class="text-center" style="width: 150px;"><span>SNo.</span></th>
+                                <th class="text-center"><span class="mx-1">全選</span><input class="mx-1" type="checkbox" id="selectall" name="selectall"></th>
+                                <th class="text-center" style="width: 150px;"><span>個案編號</span></th>
                                 <th class="text-center" style="width: 150px;"><span>病人姓名</span></th>
                                 <th class="text-center" style="width: 150px;"><span>病人資料</span></th>
                                 <th class="text-center" style="width: 300px;"><span>金幣數量</span></th>
@@ -66,9 +75,12 @@
                                         $account =$row['account'];
                                         $action="SELECT * FROM `action` WHERE account='$account' ORDER BY `time` DESC";
                                         $query=mysqli_query($conn,$action);
-                                        $row1=mysqli_fetch_row($query);
+                                        $row1=mysqli_fetch_assoc($query);
                                 ?>
                                 <tr>
+                                    <td class='align-middle'>
+                                            <input type="checkbox" name="checkbox[]" value='<?php echo $row['account'];?>'>
+                                    </td>
                                     <td class="align-middle "><?php echo $row['account'];?></td>
                                     <td class="align-middle "><?php echo $row['name'];?></td>
                                     <td class="align-middle">
@@ -103,7 +115,7 @@
                                         </form>
                                     </td>
                                     <td class="align-middle">
-                                        <?php echo $row1[1].' '.$row1[2].$row1[3].' '.$row1[4];?>
+                                        <?php echo $row1['time'].' '.$row1['degree'].$row1['parts'].' '.$row1['action'];?>
                                     </td>
                                 </tr>
                                 <?php            
@@ -115,14 +127,41 @@
                 </div>
             </div>
         </div>
+        
+        <script>
+            document.getElementById('selectall').onclick = function(){
+                var checkboxes = document.getElementsByName('checkbox[]');
+                for (var checkbox of checkboxes){
+                    checkbox.checked=this.checked;
+                }
+            }
 
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+            document.getElementById('export').onclick = function(){
+                var checkboxes = document.getElementsByName('checkbox[]');
+                var form = document.createElement("form");
+                form.method = "POST";
+                form.action = "../phpspreadsheet/ex.php";
+                for(var i=0; i<checkboxes.length;i++){
+                    if(checkboxes[i].checked){
+                        var element = document.createElement("INPUT"); 
+                        element.value = checkboxes[i].value;
+                        element.name= i;
+                        element.type = 'hidden';
+                        form.appendChild(element);
+                    }
+                }
+                document.body.appendChild(form);
+                form.submit();
+             }
+        </script>
         <script>
             $(document).ready(function () {
                 $('#datatable').DataTable({
+                    "columnDef":[{
+                        "target":[0],
+                        "orderable": false,
+                        "order":[1,'asc']
+                    }],
                     language: {
                         "lengthMenu": "顯示 _MENU_ 筆資料",
                         "sProcessing": "處理中...",
