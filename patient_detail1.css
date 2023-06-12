@@ -60,7 +60,8 @@
 .fadeInDown5 {
     animation-name: fadeInDown2;
     animation-fill-mode: both;
-    animation-duration: 1.4s;
+    animation-delay: 1.4s;
+    animation-duration: 1.2s;
 }
 .fadeInRight {
     animation-name: fadeInRight;
