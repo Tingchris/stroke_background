@@ -14,7 +14,7 @@
     $result=mysqli_query($conn,$patient);
     $row=mysqli_fetch_assoc($result);
 
-    $action1="SELECT * FROM action WHERE account = '$account' AND degree='初階' AND parts='上肢' ORDER BY time DESC";
+    $action1="SELECT * FROM action WHERE account = '$account' AND degree='初階' AND parts='上肢'";
     $query1=mysqli_query($conn,$action1);
 
     $action2="SELECT * FROM action WHERE account = '$account' AND degree='初階' AND parts='下肢'";
@@ -23,7 +23,7 @@
     $action3="SELECT * FROM action WHERE account = '$account' AND degree='進階' AND parts='上肢'";
     $query3=mysqli_query($conn,$action3);
 
-    $action4="SELECT * FROM action WHERE account = '$account' AND degree='初階' AND parts='口腔'";
+    $action4="SELECT * FROM action WHERE account = '$account' AND degree='初階' AND parts='吞嚥'";
     $query4=mysqli_query($conn,$action4);
 
     $action5="SELECT * FROM action WHERE account = '$account' AND degree='進階' AND parts='下肢'";
@@ -246,7 +246,7 @@
                         <div class="card-header d-flex align-items-center ">
                             <label class=" fs-2">病人資料</label>
                             <div class="btn_pos">
-                                <form action="excel.php" method="post">
+                                <form action="../phpspreadsheet/excel.php" method="post">
                                     <input type="hidden" name="account" value="<?php echo $row['account']?>">
                                     <button style="margin-right: 10px;" class="btn  btn-success ">
                                         <span class="text-white fs-5">匯出</span>
@@ -467,7 +467,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card my-4">
+                        <div class="card my-4 fadeInDown5">
                             <div class="card-header d-flex align-items-center">
                                 <label class="fs-2 align-middle">吞嚥訓練</label>
                             </div>
